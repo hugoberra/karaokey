@@ -1,0 +1,36 @@
+<div class="d-flex justify-content-center">
+  <div class="row">  
+    <div class="col-auto">
+      <div class="form-floating">
+        <input type="email" class="form-control" #input (keyup)="onKeyUp(input.value)" placeholder="no° participantes">
+        <label for="floatingInput">no° participantes</label>          
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="">
+  <div class="row">
+    <div *ngFor="let arr of array">
+      <form class="row gy-2 gx-3 align-items-center mt-1">
+        <div class="col-auto">
+          <div class="form-floating">
+            <input type="email" class="form-control" id="floatingInput" placeholder="Nombre de la persona">
+            <label for="floatingInput">Participante</label>
+          </div>
+        </div>
+        <div class="col-auto">
+          <div class="form-floating">
+            <input type="email" class="form-control" id="floatingInput" placeholder="Canción">
+            <label for="floatingInput">Canción</label>
+          </div>
+        </div>
+        <div class="col-auto">
+          <div class="form-floating">
+            <button type="button" class="btn btn-primary">Inscribir</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
