@@ -12,6 +12,7 @@ import { ModalidadComponent } from './karaoke/modalidad/modalidad.component';
 import { CrudplaylistComponent } from './playlist/crudplaylist/crudplaylist.component';
 import { InfoplaylistComponent } from './playlist/infoplaylist/infoplaylist.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ParticipantesComponent } from './karaoke/participantes/participantes.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     KaraokeComponent,
     ModalidadComponent,
     CrudplaylistComponent,
-    InfoplaylistComponent
+    InfoplaylistComponent,
+    ParticipantesComponent
   ],
   imports: [
     BrowserModule,

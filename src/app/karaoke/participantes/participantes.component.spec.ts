@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { KaraokeComponent } from './karaoke.component';
+import { ParticipantesComponent } from './participantes.component';
 
-describe('KaraokeComponent', () => {
-  let component: KaraokeComponent;
-  let fixture: ComponentFixture<KaraokeComponent>;
+describe('ParticipantesComponent', () => {
+  let component: ParticipantesComponent;
+  let fixture: ComponentFixture<ParticipantesComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ KaraokeComponent ]
+      declarations: [ ParticipantesComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(KaraokeComponent);
+    fixture = TestBed.createComponent(ParticipantesComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -22,5 +22,4 @@ describe('KaraokeComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-  
 });
