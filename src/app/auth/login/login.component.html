@@ -1,17 +1,21 @@
-<div class = "mt-5 d-flex justify-content-center">
-    <div class = "row mt-5">
+<div class = " d-flex justify-content-center">
+    <div class = "row ">
 
         <div class="tab-content">
+            <div class="text-center">
+                <h1>Kara'Okey</h1>
+                <p>canta tus canciones favoritas!</p>
+            </div>
             <div class="tab-pane fade show active" id="pills-login" role="tabpanel" aria-labelledby="tab-login">
-                <form>
+                <form #loginForm = "ngForm" (ngSubmit)="onLogin(badLogin, loginForm.value)">
                     <div class="form-outline mb-4">
                         <label class="form-label" for="loginName">Email</label>
-                        <input type="email" id="loginName" class="form-control" />
+                        <input type="email" id="loginName" class="form-control" name="email" ngModel />
                     </div>
 
                     <div class="form-outline mb-4">
                         <label class="form-label" for="loginPassword">Contraseña</label>
-                        <input type="password" id="loginPassword" class="form-control" />
+                        <input type="password" id="loginPassword" class="form-control" name="password" ngModel/>
                     </div>
 
                     <div class="row mb-4 justify-content-center">
@@ -28,9 +32,8 @@
                         </div>
                     </div>
 
-                    <div className="d-flex justify-content-center">
-                        <button type="submit" 
-                        class="btn btn-dark btn-block mb-4" (click)="onLogin()">Entrar</button>
+                    <div className="d-flex justify-content-end">
+                        <button type="submit" class="btn btn-dark btn-block mb-4">Entrar</button>
                     </div>
 
                     <div class="text-center">
@@ -41,3 +44,18 @@
         </div>
     </div>
 </div>
+
+<ng-template #badLogin let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Información</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">x</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        Verifica que tu contraseña o correo sean correctos.
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-primary" (click)="modal.close('Verifica')">Aceptar</button>
+    </div>
+</ng-template>

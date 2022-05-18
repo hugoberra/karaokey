@@ -10,24 +10,23 @@
                                 <a class="nav-link" aria-current="page" href="/"><b>KARA'OKEY</b></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/">Tutoriales</a>
+                                <a class="nav-link" href="myPlaylist">Mis Playlist</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/">Playlist</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/">Proyecto</a>
+                                <a class="nav-link active" href="karaoke">Karaoke</a>
                             </li>
                         </ul>
             </div>
-            <div class="d-flex flex-row-reverse bd-highlight">
-                <!-- <ul>
-                    <li class="btn btn-dark"><a href="/register" class = "text-decoration-none text-white"> Crear cuenta</a></li>
-                    <li class="btn btn-success"><a href="/login" class = "text-decoration-none text-white"> Iniciar sesión</a></li>
-                </ul> -->
-                <ul>
-                    <li class="btn btn-danger"><a href="/login" class = "text-decoration-none text-white"> Salir</a></li>
+            <div class="d-flex flex-row-reverse bd-highlight" >
+                <ul *ngIf="isLogin(); else salir">
+                    <li class="btn btn-dark"><a href="register" class = "text-decoration-none text-white"> Crear cuenta</a></li>
+                    <li class="btn btn-success"><a href="login" class = "text-decoration-none text-white"> Iniciar sesión</a></li>
                 </ul>
+                <ng-template #salir>
+                    <ul>
+                        <li class="btn btn-danger btn-lg"><a href="login" class = "text-decoration-none text-white">Salir</a></li>
+                    </ul>
+                </ng-template>
             </div>
         </div>
     </nav>

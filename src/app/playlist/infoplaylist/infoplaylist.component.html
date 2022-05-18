@@ -4,6 +4,10 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
+<div class="text-center">
+    <p>Guarda para después tus cancion favoritas!</p>
+</div>
+
 <div class="table-responsive">
     <div class="table-wrapper">
         <div class="table-title">
@@ -12,8 +16,8 @@
                     <h2>Lista <b>MyPlaylist</b></h2>
                 </div>
                 <div class="col-xs-6">
-                    <a (click)="deleteTrack(deletemodal)" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>Borrar Selección</span></a>
-                    <a (click)="deleteTrack(addModal)" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Nueva Canción</span></a>					
+                    <a (click)="deleteTrack(deletemodal)" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>Borrar canción</span></a>
+                    <a (click)="deleteTrack(addModal)" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Agregar canción</span></a>					
                 </div>
             </div>
         </div>
@@ -45,7 +49,7 @@
                     <td>{{row.artista}}</td>
                     <td>{{row.album}}</td>
                     <td>
-                        <a  class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="edit">&#xe037;</i></a>
+                        <a  (click)="playTrack()"><i class="material-icons" data-toggle="tooltip" title="edit">&#xe037;</i></a>
                         <a (click)="deleteTrack(deletemodal)" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
                     </td>
                 </tr>
@@ -100,29 +104,29 @@
               <button type="submit" class="btn btn-primary">buscar</button>
             </div>
         </form>
-            <table class="table table-striped table-hover">
-                <thead>
-                    <tr>
-                        <th></th>
-                        <th>Nombre</th>
-                        <th>Artista</th>
-                        <th>Albúm</th>
-                    </tr>
-                </thead>
-                <tbody *ngFor="let row of canciones2">
-                    <tr>
-                        <td>
-                            <span class="custom-checkbox">
-                                <input type="checkbox" id="checkbox1" name="options[]" value="1">
-                                <label for="checkbox1"></label>
-                            </span>
-                        </td>
-                        <td>{{row.nombre}}</td>
-                        <td>{{row.artista}}</td>
-                        <td>{{row.album}}</td>
-                    </tr>
-                </tbody>
-            </table>
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Nombre</th>
+                    <th>Artista</th>
+                    <th>Albúm</th>
+                </tr>
+            </thead>
+            <tbody *ngFor="let row of canciones2">
+                <tr>
+                    <td>
+                        <span class="custom-checkbox">
+                            <input type="checkbox" id="checkbox1" name="options[]" value="1">
+                            <label for="checkbox1"></label>
+                        </span>
+                    </td>
+                    <td>{{row.nombre}}</td>
+                    <td>{{row.artista}}</td>
+                    <td>{{row.album}}</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
     <div class="modal-footer">
         <button type="button" class="btn btn-success" (click)="modal.close('Save click')">Agregar</button>

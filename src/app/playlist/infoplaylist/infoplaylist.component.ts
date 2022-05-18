@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 
@@ -18,7 +19,7 @@ export class InfoplaylistComponent {
   Created constructor
   --------------------------------------------
   --------------------------------------------*/
-  constructor(private modalService: NgbModal) {}
+  constructor(private modalService: NgbModal, private route:Router) {}
     
   /**
    * Write code on Method
@@ -56,14 +57,17 @@ export class InfoplaylistComponent {
     }
   }
 
+  playTrack() : void{
+    this.route.navigate(['karaoke'])
+  }
+
   canciones2 = [    {
-    'nombre':'Do I Wanna Know?',
-    'artista':'Arctic Monkeys',
-    'album':'AM'
+    'nombre':'Bohemian Rhapsody',
+    'artista':'Queen',
+    'album':'A Night at the Opera'
   }
 ]  
   canciones = [
-    
     {
       'nombre':'Do I Wanna Know?',
       'artista':'Arctic Monkeys',
@@ -87,7 +91,14 @@ export class InfoplaylistComponent {
       'nombre':'Lonely Boy',
       'artista':'The Black Keys',
       'album':'Underground'
-    }
+    },
+    /*
+    {
+      'nombre':'Imagination',
+      'artista':'Foster the People',
+      'album':'Imagination'
+    },
+    */
   ]
 
 }

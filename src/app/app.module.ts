@@ -13,6 +13,7 @@ import { CrudplaylistComponent } from './playlist/crudplaylist/crudplaylist.comp
 import { InfoplaylistComponent } from './playlist/infoplaylist/infoplaylist.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ParticipantesComponent } from './karaoke/participantes/participantes.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,9 @@ import { ParticipantesComponent } from './karaoke/participantes/participantes.co
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
